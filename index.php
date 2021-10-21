@@ -1,5 +1,5 @@
 <?php
-
+/*PROGRAMMAZIONE AD OGGETTI*/
 
 // DEFINIRE UNA CLASSE
     class Movie {
@@ -8,6 +8,7 @@
         public $subTitle;
         public $year;
         public $genre;
+        public $recommended;
     
 // DEFINIRE IL COSTRUTTORE
         function __construct($_title, $_subTitle, $_year) {
@@ -24,6 +25,13 @@
                 return $this->genre = $_genre;
             }
         }
+        function recommended($_reviews) {
+            if($_reviews > 3) {
+                return $this->recommended = 'Consigliato';
+            } else {
+                return $this->recommended = 'Consigliato al 30%';
+            }
+        }
     }
 
 // 4) Vengono istanziati almeno due oggetti ‘Movie’ e stampati a schermo i valori delle relative proprietà
@@ -32,6 +40,7 @@
     echo 'SubTitle :' . ' ' . $harryPotter->subTitle . '<br/>' ;
     echo 'Anno :' . ' ' . $harryPotter->year . '<br/>' ;
     echo 'Genre :' . ' ' . $harryPotter->addGenre('') . '<br/>';
+    echo 'recommended :' . ' ' . $harryPotter->recommended(5) . '<br/>';
     echo '<br/>';
 
 
@@ -40,6 +49,8 @@
     echo 'SubTitle :' . ' ' . $rocky->subTitle . '<br/>' ;
     echo 'Anno :' . ' ' . $rocky->year . '<br/>' ;
     echo 'Genre :' . ' ' . $harryPotter->addGenre('Azione') . '<br/>';
+    echo 'recommended :' . ' ' . $harryPotter->recommended(4) . '<br/>';
+
     echo '<br/>';
 
     $ilSignoreDegliAnelli = new Movie('Signore Degli Anelli', 'x', 1990);
@@ -47,6 +58,8 @@
     echo 'SubTitle :' . ' ' . $ilSignoreDegliAnelli->subTitle . '<br/>' ;
     echo 'Anno :' . ' ' . $ilSignoreDegliAnelli->year . '<br/>' ;
     echo 'Genre :' . ' ' . $harryPotter->addGenre('') . '<br/>';
+    echo 'recommended :' . ' ' . $harryPotter->recommended(3) . '<br/>';
+
  
 ?>
 
