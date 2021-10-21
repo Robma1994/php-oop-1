@@ -18,7 +18,11 @@
 
 // DEFINIRE I METODI
         function addGenre($_genre) {
-            return $this->genre = $_genre;
+            if($_genre === '') {
+                return $this->genre = 'Genere non trovato';
+            } else {
+                return $this->genre = $_genre;
+            }
         }
     }
 
@@ -27,7 +31,7 @@
     echo 'Title :' . ' ' . $harryPotter->title . '<br/>' ;
     echo 'SubTitle :' . ' ' . $harryPotter->subTitle . '<br/>' ;
     echo 'Anno :' . ' ' . $harryPotter->year . '<br/>' ;
-    echo 'Genre :' . ' ' . $harryPotter->addGenre('Narrativa fantasy') . '<br/>';
+    echo 'Genre :' . ' ' . $harryPotter->addGenre('') . '<br/>';
     echo '<br/>';
 
 
@@ -35,14 +39,14 @@
     echo 'Title :' . ' ' . $rocky->title . '<br/>' ;
     echo 'SubTitle :' . ' ' . $rocky->subTitle . '<br/>' ;
     echo 'Anno :' . ' ' . $rocky->year . '<br/>' ;
-    echo 'Genre :' . ' ' . $harryPotter->addGenre('Narrativa fantasy') . '<br/>';
+    echo 'Genre :' . ' ' . $harryPotter->addGenre('Azione') . '<br/>';
     echo '<br/>';
 
     $ilSignoreDegliAnelli = new Movie('Signore Degli Anelli', 'x', 1990);
     echo 'Title :' . ' ' . $ilSignoreDegliAnelli->title . '<br/>' ;
     echo 'SubTitle :' . ' ' . $ilSignoreDegliAnelli->subTitle . '<br/>' ;
     echo 'Anno :' . ' ' . $ilSignoreDegliAnelli->year . '<br/>' ;
-    echo 'Genre :' . ' ' . $harryPotter->addGenre('Narrativa fantasy') . '<br/>';
+    echo 'Genre :' . ' ' . $harryPotter->addGenre('') . '<br/>';
  
 ?>
 
