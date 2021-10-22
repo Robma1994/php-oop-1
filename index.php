@@ -18,18 +18,18 @@
         }
 
 // DEFINIRE I METODI
-        function addGenre($_genre) {
-            if($_genre === '') {
-                return $this->genre = 'Genere non trovato';
+        function getGenre() {
+            if($this->genre === '') {
+                return 'Genere non trovato';
             } else {
-                return $this->genre = $_genre;
+                return $this->genre;
             }
         }
-        function recommended($_reviews) {
-            if($_reviews > 3) {
-                return $this->recommended = 'Consigliato';
+        function isRecommended() {
+            if($this->recommended > 3) {
+                return 'Consigliato al 100%';
             } else {
-                return $this->recommended = 'Consigliato al 30%';
+                return 'Consigliato al 30%';
             }
         }
     }
@@ -39,8 +39,8 @@
     echo 'Title :' . ' ' . $harryPotter->title . '<br/>' ;
     echo 'SubTitle :' . ' ' . $harryPotter->subTitle . '<br/>' ;
     echo 'Anno :' . ' ' . $harryPotter->year . '<br/>' ;
-    echo 'Genre :' . ' ' . $harryPotter->addGenre('') . '<br/>';
-    echo 'recommended :' . ' ' . $harryPotter->recommended(5) . '<br/>';
+    echo 'Genre :' . ' ' . $harryPotter->getGenre() . '<br/>';
+    echo 'recommended :' . ' ' . $harryPotter->isRecommended() . '<br/>';
     echo '<br/>';
 
 
@@ -48,8 +48,6 @@
     echo 'Title :' . ' ' . $rocky->title . '<br/>' ;
     echo 'SubTitle :' . ' ' . $rocky->subTitle . '<br/>' ;
     echo 'Anno :' . ' ' . $rocky->year . '<br/>' ;
-    echo 'Genre :' . ' ' . $harryPotter->addGenre('Azione') . '<br/>';
-    echo 'recommended :' . ' ' . $harryPotter->recommended(4) . '<br/>';
 
     echo '<br/>';
 
@@ -57,8 +55,7 @@
     echo 'Title :' . ' ' . $ilSignoreDegliAnelli->title . '<br/>' ;
     echo 'SubTitle :' . ' ' . $ilSignoreDegliAnelli->subTitle . '<br/>' ;
     echo 'Anno :' . ' ' . $ilSignoreDegliAnelli->year . '<br/>' ;
-    echo 'Genre :' . ' ' . $harryPotter->addGenre('') . '<br/>';
-    echo 'recommended :' . ' ' . $harryPotter->recommended(3) . '<br/>';
+   
 
  
 ?>
