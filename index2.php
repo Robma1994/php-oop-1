@@ -26,8 +26,17 @@
             return $this->duration;
         }
         function setDuration() {
-            $this->duration = $_duration;
+            if($this->duration == null) {
+                $this->duration = 'Non Disponibile';  
+            } 
         }
+        /*
+        function setDuration($_disponibility) {
+            if($_disponibility !== null) {
+                $this->duration = $_disponibility;  
+            } 
+        }
+        */
         function getYear() {
             return $this->year;
         }
@@ -37,20 +46,22 @@
     }
 
 // 4) Vengono istanziati almeno due oggetti ‘Movie’ e stampati a schermo i valori delle relative proprietà
-    $harryPotter = new Movie('Harry Potter', 130, 2005);
+    $harryPotter = new Movie('Harry Potter', null , 2005);
     echo 'Title :' . ' ' . $harryPotter->getTitle() . '<br/>' ;
+    $harryPotter->setDuration();
+    //$harryPotter->setDuration('Non Disponibile');
     echo 'Duration: ' . ' ' . $harryPotter->getDuration() . '<br/>';
     echo 'Anno :' . ' ' . $harryPotter->getYear() . '<br/>' ;
 
     echo '<br/>';
 
-    $rocky = new Movie('Rocky', 300, 2001);
+    $rocky = new Movie('Rocky', 230, 2001);
     echo 'Title :' . ' ' . $rocky->getTitle() . '<br/>' ;
     echo 'Duration: ' . ' ' . $rocky->getDuration() . '<br/>';
     echo 'Anno :' . ' ' . $rocky->getYear() . '<br/>' ;
 
     echo '<br/>';
-    
+
 
  
 ?>
